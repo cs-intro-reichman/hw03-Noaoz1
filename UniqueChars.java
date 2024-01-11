@@ -2,7 +2,18 @@
 public class UniqueChars {
     public static void main(String[] args) {  
         String str = args[0];
-        System.out.println(uniqueChars(str));
+        String newstr = "";
+        int count = 0;
+        while (str.length() > count) {
+            if ((int)str.charAt(count) == 32) {
+                newstr = newstr + str.charAt(count);
+            }
+            if ( newstr.indexOf(str.charAt(count)) < 0) {
+                newstr = newstr + str.charAt(count);
+            }
+            count++;
+        }
+        System.out.println(newstr);
     }
 
     /**

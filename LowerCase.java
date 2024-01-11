@@ -2,8 +2,17 @@
 public class LowerCase {
     public static void main(String[] args) {  
         String str = args[0];
-        System.out.println(lowerCase(str));
-        System.out.println("hello world");
+        String lowstr = "";
+        int count = 0;
+        while (str.length() > count) {
+            char letter = str.charAt(count);
+            if ( ((int)letter) > 64 && (int)letter < 90) {
+                lowstr = lowstr + (char)((int)letter + 32);
+            }
+            else lowstr = lowstr + letter;
+            count++;
+        }
+        System.out.println(lowstr);
 
     }
 
